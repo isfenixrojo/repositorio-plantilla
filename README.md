@@ -16,6 +16,7 @@ graph TD
 ```
 
 ## Contribución 
+Participantes activos.
 
 ## Temas legales
 1. Argumento 1
