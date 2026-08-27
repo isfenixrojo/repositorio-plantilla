@@ -1,0 +1,11 @@
+name: hola-mundo
+
+on: [push]
+
+jobs:
+  saludar:
+    runs-on: windows-latest
+    steps:
+      - name: Muestra mensje hola mundo
+        run: echo "Hola mundo!! Israel"
+  
