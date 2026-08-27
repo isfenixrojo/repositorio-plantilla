@@ -1,24 +1,34 @@
-# MI REPOSITORIO
+# Nombre Repositorio
 
-Vamos a ponerle alegría a este archivo README.md
-
-## Instalación
-
-Este repositorio fue subido a [GitHub](https://github.com/isfenixrojo/repositorio-plantilla) para su uso.
-
-Clone el repositorio para su uso.
+## Guia de instalación
 
 ```bash
-git clone https://github.com/isfenixrojo/repositorio-plantilla
+Comandos necesarios para arrancar e instalar el proyecto.
+```
+## Instrucciones de uso
+
+## Diagrama de flujo
+```mermaid
+graph TD
+  A[Start] --> B{Decision}
+  B -->|Yes| C[Finish]
+  B -->|No| D[Alternate]
 ```
 
 ## Contribución 
 
-Pull requests son Bienvenidos. 
-Para mejores cambios, abra primero el issue para la discusión para saber qué cambio desea realizar.
+## Temas legales
+1. Argumento 1
+2. Argumento 2
+3. Argumento 3
+    1. Articulo 3a
+    2. Articulo 3b
+       
+## Colaboradores
 
-Por favor asegúrese de actualizar apropiadamente la rama.
+| Colaborador   | Repositorio   |
+| ------------- |:-------------:|
+| Nombre Colaboraor      | [repositorio](https://github.com/)     |
+| Nombre Colaboraor      | [repositorio](https://github.com/)     |
 
-## Licencia
 
-[MIT](https://choosealicense.com/licenses/mit/)
