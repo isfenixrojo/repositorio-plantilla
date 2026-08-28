@@ -17,8 +17,8 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v7.0.1
-        
+
       - name: Listar archivos del respositorio
         run: | 
-          echo "El repositorio $({ gihub.repository }) contiene los siguientes archivos:"
+          echo "El repositorio ${{ github.repository }} contiene los siguientes archivos:"
           tree
