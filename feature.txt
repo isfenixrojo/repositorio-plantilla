@@ -1,1 +1,73 @@
-Un mensaje de texto de feacture
+Estoy desarrollando una API Web con .Net 9, me estoy enfocando en la metodología API First para 
+el diseño y la especificación de la interfaz de la API y hacer las pruebas antes de escribir el código, 
+me ayudas a crear los mocks en postman con un CRUD(POST, GET, UDPATE, PATCH, DELETE) para dar de alta a un usuario, 
+haz las validaciones necesarias  de acuerdo con con el tipo de dato y devuelve la respuesta de acuerdo a la operacion.
+genera los ejemplos de los posibles códigos de estado de respuesta HTTP.
+
+Esta es la estructura de la tabla donde se vaciarán los datos de los usuarios:
+
+CREATE TABLE Usuarios(
+	IdUsuario INT IDENTITY(1,1) NOT NULL,
+	NombreUsuario NVARCHAR(100) NOT NULL,
+	Apellidos NVARCHAR(100) NOT NULL,
+	Email NVARCHAR(100) NOT NULL,
+	PasswordHash NVARCHAR(100) NOT NULL,
+	Telefono NVARCHAR(100) NOT NULL, 
+	RolId INT NOT NULL,
+	FechaCreacion TIMESTAMP,
+	FechaActualizacion TIMESTAMP,
+	Activo BIT NOT NULL,
+CONSTRAINT PK_Usuarios PRIMARY KEY (IdUsuario),
+CONSTRAINT FK_Usuarios_Rol FOREIGN KEY (RolId) REFERENCES Rol(RolId),
+CONSTRAINT UQ_Usuarios_Modelo UNIQUE (Telefono))
+
+Este es el ejemplo del body del request:
+{
+	"IdUsuario": 12001,
+    "NombreUsuario": "Israel",
+    "Apellidos": "Rojo Red",
+    "Email": "isredrojo@gmail.com",
+	"PasswordHash": "4fd545(/8/**-",
+	"Telefono": "554267894",
+	"RolId": 2,
+	"FechaCreacion": "21-10-2026 13:40:00",
+	"FechaActualizacion": "21-10-2026 13:40:00",
+	"Activo": 1
+}
+
+Este es el ejemplo del response cuando la operacion es exitosa:
+{
+  "status": true,
+  "message": "Operación exitosa",
+  "errors": []
+  "data": {
+    "IdUsuario": 12001,
+    "NombreUsuario": "Israel",
+    "Apellidos": "Rojo Red",
+    "Email": "isredrojo@gmail.com",
+	"PasswordHash": "4fd545(/8/**-",
+	"Telefono": "554267894",
+	"RolId": 2,
+	"FechaCreacion": "21-10-2026 13:40:00",
+	"FechaActualizacion": "21-10-2026 13:40:00",
+	"Activo": 1,
+  }
+}
+
+Este es el ejemplo del response cuando la operacion no es exitosa:
+{
+  "success": false,
+  "status": "400 Bad Request",
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "Los datos enviados son inválidos.",
+    "details": [
+      {
+        "campo": "correo",
+        "mensaje": "El formato del correo electrónico no es válido."
+      }
+    ]
+  }
+}
+
+Juega con el response de acuerdo al estatus del response 
